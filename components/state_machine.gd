@@ -15,7 +15,7 @@ func _enter_start_state() -> void:
 	if !is_instance_valid(state):
 		switch_state(start_state)
 
-func switch_state(to_state: State, _emit_switched:= true):
+func switch_state(to_state: State, _emit_switched:=true):
 	prev_state = state
 	state = to_state
 	if prev_state:
