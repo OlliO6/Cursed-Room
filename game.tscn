@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4g4ti041upyd"]
+
+[ext_resource type="PackedScene" uid="uid://b60xn7n7ubk53" path="res://friendly_zone.tscn" id="1_emnom"]
+[ext_resource type="PackedScene" uid="uid://l1yqtqrqjmbh" path="res://player/player.tscn" id="2_pg50k"]
+
+[node name="Game" type="Node2D"]
+
+[node name="FriendlyZone" parent="." instance=ExtResource("1_emnom")]
+
+[node name="Player" parent="." instance=ExtResource("2_pg50k")]
+position = Vector2(0, 35)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+limit_bottom = 96
+position_smoothing_enabled = true
+editor_draw_limits = true

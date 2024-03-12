@@ -8,9 +8,9 @@
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_xhl2v")
-movement_speed = 20.0
-acceleration = 1.0
-deceleration = 0.91
+movement_speed = 32.0
+acceleration = 0.226
+deceleration = 0.136
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("start_state")]
 script = ExtResource("2_thslt")
