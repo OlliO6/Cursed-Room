@@ -1,19 +1,17 @@
 extends CharacterBody2D
 
-
 @export var movement_speed: float
 @export_range(0, 1) var acceleration: float
 @export_range(0, 1) var deceleration: float
 
-@onready var state_machine = $StateMachine
-@onready var idle_state = $StateMachine/Idle
-@onready var run_state = $StateMachine/Run
+@onready var state_machine := $StateMachine as StateMachine
+@onready var idle_state := $StateMachine/Idle as State
+@onready var run_state := $StateMachine/Run as State
 
 func _ready() -> void:
 	pass
 
-func _physics_process(delta) -> void:
-	
+func _physics_process(_delta) -> void:
 	$StateLabel.text = state_machine.state.name
 	
 	match state_machine.state:
@@ -23,7 +21,7 @@ func _physics_process(delta) -> void:
 				state_machine.switch_state(run_state)
 		
 		run_state:
-			var move_input:= InputManager.get_move_input()
+			var move_input := InputManager.get_move_input()
 			_move(move_input, movement_speed, acceleration)
 			if move_input == Vector2.ZERO:
 				state_machine.switch_state(idle_state)

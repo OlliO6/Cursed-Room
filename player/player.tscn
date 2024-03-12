@@ -11,12 +11,12 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_tiiay"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tyops"]
-size = Vector2(22, 50)
+size = Vector2(40, 23)
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
 script = ExtResource("1_xhl2v")
-movement_speed = 32.0
+movement_speed = 55.0
 acceleration = 0.226
 deceleration = 0.136
 
@@ -47,19 +47,17 @@ script = ExtResource("4_wdw55")
 [node name="Pivot" type="Node2D" parent="WeaponHolder/Moon"]
 
 [node name="Sprite2D" type="Sprite2D" parent="WeaponHolder/Moon/Pivot"]
-position = Vector2(15, 25)
 texture = ExtResource("4_63jjy")
-offset = Vector2(-0.22, -24.39)
+offset = Vector2(16, 0)
 region_enabled = true
 region_rect = Rect2(47.5518, 116, 32.4482, 12)
 
 [node name="AttackArea" type="Area2D" parent="WeaponHolder/Moon/Pivot"]
-position = Vector2(15, 25)
 collision_layer = 0
 collision_mask = 5
 monitorable = false
 script = ExtResource("6_3qctg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WeaponHolder/Moon/Pivot/AttackArea"]
-position = Vector2(12, -26)
+position = Vector2(20, 0.5)
 shape = SubResource("RectangleShape2D_tyops")

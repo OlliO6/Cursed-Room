@@ -1,11 +1,19 @@
 extends Area2D
 
 @export var damage: int = 10
+@export var active: bool = true:
+	set(v):
+		active = v
+		rescan()
 
 func _ready() -> void:
-	body_entered.connect(_on_body_entered)
+	body_entered.connect(_apply_damage)
 
-func _on_body_entered(body: Node2D) -> void:
-	var dmg:= body.get_node("DamageReceiver") as DamageReceiver
-	if dmg:
+func rescan() -> void:
+	for b in get_overlapping_bodies():
+		_apply_damage(b)
+
+func _apply_damage(body: Node2D) -> void:
+	var dmg := body.get_node("DamageReceiver") as DamageReceiver
+	if dmg and !dmg.is_invincible():
 		dmg.take_damage(damage)

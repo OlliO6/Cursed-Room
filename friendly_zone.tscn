@@ -204,6 +204,16 @@ sources/0 = SubResource("TileSetAtlasSource_e2nsm")
 
 [node name="FriendlyZone" type="Node2D"]
 
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -1
+z_as_relative = false
+offset_left = -635.0
+offset_top = -638.0
+offset_right = 639.0
+offset_bottom = 625.0
+mouse_filter = 2
+color = Color(0.482353, 0.380392, 0.231373, 1)
+
 [node name="TileMap" type="TileMap" parent="."]
 modulate = Color(0, 0.937255, 0.211765, 1)
 tile_set = SubResource("TileSet_j0i8v")
