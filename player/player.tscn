@@ -1,12 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://l1yqtqrqjmbh"]
+[gd_scene load_steps=10 format=3 uid="uid://l1yqtqrqjmbh"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_xhl2v"]
 [ext_resource type="Script" path="res://components/state_machine.gd" id="2_thslt"]
 [ext_resource type="Script" path="res://components/state.gd" id="3_hw1ms"]
+[ext_resource type="Texture2D" uid="uid://dew8eid31v3cj" path="res://icon.svg" id="4_63jjy"]
+[ext_resource type="Script" path="res://player/weapon.gd" id="4_wdw55"]
+[ext_resource type="Script" path="res://player/weapon_holder.gd" id="4_wkoiu"]
+[ext_resource type="Script" path="res://components/attack_area.gd" id="6_3qctg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tiiay"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tyops"]
+size = Vector2(22, 50)
+
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 2
 script = ExtResource("1_xhl2v")
 movement_speed = 32.0
 acceleration = 0.226
@@ -28,3 +36,30 @@ shape = SubResource("CircleShape2D_tiiay")
 [node name="StateLabel" type="Label" parent="."]
 offset_right = 40.0
 offset_bottom = 23.0
+
+[node name="WeaponHolder" type="Node2D" parent="." node_paths=PackedStringArray("_weapon")]
+script = ExtResource("4_wkoiu")
+_weapon = NodePath("Moon")
+
+[node name="Moon" type="Node2D" parent="WeaponHolder"]
+script = ExtResource("4_wdw55")
+
+[node name="Pivot" type="Node2D" parent="WeaponHolder/Moon"]
+
+[node name="Sprite2D" type="Sprite2D" parent="WeaponHolder/Moon/Pivot"]
+position = Vector2(15, 25)
+texture = ExtResource("4_63jjy")
+offset = Vector2(-0.22, -24.39)
+region_enabled = true
+region_rect = Rect2(47.5518, 116, 32.4482, 12)
+
+[node name="AttackArea" type="Area2D" parent="WeaponHolder/Moon/Pivot"]
+position = Vector2(15, 25)
+collision_layer = 0
+collision_mask = 5
+monitorable = false
+script = ExtResource("6_3qctg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WeaponHolder/Moon/Pivot/AttackArea"]
+position = Vector2(12, -26)
+shape = SubResource("RectangleShape2D_tyops")
