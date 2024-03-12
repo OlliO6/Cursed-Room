@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://l1yqtqrqjmbh"]
+
+[ext_resource type="Script" path="res://player/player.gd" id="1_xhl2v"]
+[ext_resource type="Script" path="res://components/state_machine.gd" id="2_thslt"]
+[ext_resource type="Script" path="res://components/state.gd" id="3_hw1ms"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tiiay"]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_xhl2v")
+movement_speed = 20.0
+acceleration = 1.0
+deceleration = 0.91
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("start_state")]
+script = ExtResource("2_thslt")
+start_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="StateMachine"]
+script = ExtResource("3_hw1ms")
+
+[node name="Run" type="Node" parent="StateMachine"]
+script = ExtResource("3_hw1ms")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_tiiay")
+
+[node name="StateLabel" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
