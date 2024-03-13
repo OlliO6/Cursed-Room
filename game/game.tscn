@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://b4g4ti041upyd"]
+[gd_scene load_steps=7 format=3 uid="uid://b4g4ti041upyd"]
 
-[ext_resource type="PackedScene" uid="uid://b60xn7n7ubk53" path="res://zones/friendly_zone.tscn" id="1_emnom"]
-[ext_resource type="PackedScene" uid="uid://c6wytccp6fsit" path="res://zones/deadly_zone.tscn" id="2_oceqk"]
-[ext_resource type="PackedScene" uid="uid://l1yqtqrqjmbh" path="res://player/player.tscn" id="2_pg50k"]
+[ext_resource type="Script" path="res://game/game.gd" id="1_soxd2"]
+[ext_resource type="PackedScene" uid="uid://b60xn7n7ubk53" path="res://zones/friendly_zone.tscn" id="2_2ar4w"]
+[ext_resource type="PackedScene" uid="uid://c6wytccp6fsit" path="res://zones/deadly_zone.tscn" id="3_a3fpl"]
+[ext_resource type="PackedScene" uid="uid://l1yqtqrqjmbh" path="res://player/player.tscn" id="4_wbxod"]
 
 [sub_resource type="Gradient" id="Gradient_pgsn6"]
 interpolation_mode = 2
@@ -18,15 +19,15 @@ fill_from = Vector2(0.5, 0.5)
 fill_to = Vector2(1, 0.5)
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_soxd2")
 
-[node name="FriendlyZone" parent="." instance=ExtResource("1_emnom")]
-visible = false
+[node name="FriendlyZone" parent="." instance=ExtResource("2_2ar4w")]
 position = Vector2(0, 26)
 
-[node name="DeadlyZone" parent="." instance=ExtResource("2_oceqk")]
+[node name="DeadlyZone" parent="." instance=ExtResource("3_a3fpl")]
 position = Vector2(0, 22)
 
-[node name="Player" parent="." instance=ExtResource("2_pg50k")]
+[node name="Player" parent="." instance=ExtResource("4_wbxod")]
 position = Vector2(0, 35)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]

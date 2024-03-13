@@ -6,6 +6,7 @@ signal attack_started
 signal attack_ended
 signal spezial_started
 signal spezial_ended
+signal switch_zone_pressed
 
 func get_move_input() -> Vector2:
 	var result: Vector2
@@ -27,4 +28,8 @@ func _unhandled_input(event: InputEvent) -> void:
 	
 	if event.is_action("spezial"):
 		(spezial_started if event.is_pressed() else spezial_ended).emit()
+		return
+
+	if event.is_action_pressed("switch_zone"):
+		switch_zone_pressed.emit()
 		return
