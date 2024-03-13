@@ -38,3 +38,6 @@ editor_draw_limits = true
 [node name="PointLight2D" type="PointLight2D" parent="Player"]
 position = Vector2(1, -8)
 texture = SubResource("GradientTexture2D_8u353")
+
+[connection signal="deadly_zone_entered" from="." to="Player/PointLight2D" method="show"]
+[connection signal="friendly_zone_entered" from="." to="Player/PointLight2D" method="hide"]
