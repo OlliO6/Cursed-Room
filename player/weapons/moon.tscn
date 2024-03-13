@@ -1,12 +1,12 @@
 [gd_scene load_steps=10 format=3 uid="uid://mxire01kjgcv"]
 
 [ext_resource type="Script" path="res://player/weapons/weapon.gd" id="1_s10h2"]
-[ext_resource type="Texture2D" uid="uid://dew8eid31v3cj" path="res://icon.svg" id="2_qwbfq"]
 [ext_resource type="Script" path="res://components/attack_area.gd" id="3_kx1pm"]
+[ext_resource type="Texture2D" uid="uid://brjxcfpqtgtmn" path="res://player/weapons/moon.png" id="3_q2703"]
 [ext_resource type="Script" path="res://player/weapons/queued_animation_player.gd" id="4_25nxt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tyops"]
-size = Vector2(40, 23)
+size = Vector2(23.5104, 10.6366)
 
 [sub_resource type="Animation" id="Animation_ar36f"]
 length = 0.001
@@ -37,7 +37,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Pivot/Sprite2D:flip_v")
+tracks/2/path = NodePath("Pivot/Sprite2D:flip_h")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -45,6 +45,18 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Pivot/Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
 }
 
 [sub_resource type="Animation" id="Animation_uj18e"]
@@ -86,22 +98,34 @@ tracks/2/path = NodePath("Pivot:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.5, 2),
-"transitions": PackedFloat32Array(-2, 3.86374, 1),
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(-2, 3.86374),
 "update": 0,
-"values": [-1.5708, 1.8326, 1.5708]
+"values": [-1.8326, 1.8326]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Pivot/Sprite2D:flip_v")
+tracks/3/path = NodePath("Pivot/Sprite2D:flip_h")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 2),
+"times": PackedFloat32Array(0, 0.6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Pivot/Sprite2D:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 0]
 }
 
 [sub_resource type="Animation" id="Animation_nwx7w"]
@@ -143,22 +167,34 @@ tracks/2/path = NodePath("Pivot:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.5, 1.5),
-"transitions": PackedFloat32Array(-2, 4.59479, 1),
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(-2, 4.59479),
 "update": 0,
-"values": [1.5708, -1.8326, -1.5708]
+"values": [1.5708, -1.8326]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Pivot/Sprite2D:flip_v")
+tracks/3/path = NodePath("Pivot/Sprite2D:flip_h")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 1.5),
+"times": PackedFloat32Array(0, 0.6),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Pivot/Sprite2D:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [1, 0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_p5ejr"]
@@ -171,22 +207,15 @@ _data = {
 [node name="Moon" type="Node2D"]
 script = ExtResource("1_s10h2")
 
-[node name="Arrow" type="Sprite2D" parent="."]
-modulate = Color(1, 1, 1, 0.454902)
-position = Vector2(9.225, 0)
-rotation = 1.5708
-scale = Vector2(0.0467161, 0.148077)
-texture = ExtResource("2_qwbfq")
-region_enabled = true
-region_rect = Rect2(16, 16, 96, 104)
-
 [node name="Pivot" type="Node2D" parent="."]
 rotation = -1.5708
 
 [node name="Sprite2D" type="Sprite2D" parent="Pivot"]
-texture = ExtResource("2_qwbfq")
-offset = Vector2(16, 0)
-region_enabled = true
+position = Vector2(12.7465, 6.52124)
+rotation = -1.5708
+texture = ExtResource("3_q2703")
+flip_v = true
+hframes = 2
 region_rect = Rect2(47.5518, 116, 32.4482, 12)
 
 [node name="AttackArea" type="Area2D" parent="Pivot"]
@@ -197,7 +226,8 @@ script = ExtResource("3_kx1pm")
 active = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pivot/AttackArea"]
-position = Vector2(20, 0.5)
+position = Vector2(12.1341, 6.68173)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_tyops")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
