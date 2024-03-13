@@ -122,7 +122,7 @@ tracks/4/path = NodePath("Pivot/Sprite2D:frame")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.4),
+"times": PackedFloat32Array(0.1, 0.4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [1, 0]
@@ -170,7 +170,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(-2, 4.59479),
 "update": 0,
-"values": [1.5708, -1.8326]
+"values": [1.8326, -1.8326]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
@@ -191,7 +191,7 @@ tracks/4/path = NodePath("Pivot/Sprite2D:frame")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.4),
+"times": PackedFloat32Array(0.1, 0.4),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [1, 0]
