@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dt7y60s2yaueo"
-path="res://.godot/imported/deadly_zone.png-ea6aff953e65fb0b7f81bb08d5cf1fdc.ctex"
+path="res://.godot/imported/deadly_zone.png-4fe0b1ff2fba21e9b540fc2488c006e6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Zones/deadly_zone.png"
-dest_files=["res://.godot/imported/deadly_zone.png-ea6aff953e65fb0b7f81bb08d5cf1fdc.ctex"]
+source_file="res://zones/deadly_zone.png"
+dest_files=["res://.godot/imported/deadly_zone.png-4fe0b1ff2fba21e9b540fc2488c006e6.ctex"]
 
 [params]
 

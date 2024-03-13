@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c6wytccp6fsit"]
 
-[ext_resource type="TileSet" uid="uid://bttyp76ngh4gv" path="res://Zones/tileset.tres" id="1_22y5j"]
+[ext_resource type="TileSet" uid="uid://bttyp76ngh4gv" path="res://zones/tileset.tres" id="1_22y5j"]
 
 [node name="DeadlyZone" type="Node2D"]
 
@@ -15,6 +15,7 @@ mouse_filter = 2
 color = Color(0.482353, 0.380392, 0.231373, 1)
 
 [node name="TileMap" type="TileMap" parent="."]
+use_parent_material = true
 tile_set = ExtResource("1_22y5j")
 format = 2
 layer_0/name = "ground"

@@ -211,6 +211,7 @@ script = ExtResource("1_s10h2")
 rotation = -1.5708
 
 [node name="Sprite2D" type="Sprite2D" parent="Pivot"]
+light_mask = 2
 position = Vector2(12.7465, 6.52124)
 rotation = -1.5708
 texture = ExtResource("3_q2703")

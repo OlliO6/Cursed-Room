@@ -18,6 +18,6 @@ func _apply_damage(body: Node2D) -> void:
 	if !active:
 		return
 
-	var dmg := body.get_node("DamageReceiver") as DamageReceiver
+	var dmg := body.get_node_or_null("DamageReceiver") as DamageReceiver
 	if dmg and !dmg.is_invincible():
 		dmg.take_damage(damage)

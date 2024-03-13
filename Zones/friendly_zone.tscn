@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b60xn7n7ubk53"]
 
-[ext_resource type="TileSet" uid="uid://bttyp76ngh4gv" path="res://Zones/tileset.tres" id="1_v3ojr"]
+[ext_resource type="TileSet" uid="uid://bttyp76ngh4gv" path="res://zones/tileset.tres" id="1_v3ojr"]
 
 [node name="FriendlyZone" type="Node2D"]
 
@@ -15,6 +15,7 @@ mouse_filter = 2
 color = Color(0.203922, 0.109804, 0.152941, 1)
 
 [node name="TileMap" type="TileMap" parent="."]
+use_parent_material = true
 tile_set = ExtResource("1_v3ojr")
 format = 2
 layer_0/name = "ground"

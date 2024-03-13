@@ -1,13 +1,13 @@
 [gd_scene load_steps=6 format=3 uid="uid://b4g4ti041upyd"]
 
-[ext_resource type="PackedScene" uid="uid://b60xn7n7ubk53" path="res://Zones/friendly_zone.tscn" id="1_emnom"]
-[ext_resource type="PackedScene" uid="uid://c6wytccp6fsit" path="res://Zones/deadly_zone.tscn" id="2_oceqk"]
+[ext_resource type="PackedScene" uid="uid://b60xn7n7ubk53" path="res://zones/friendly_zone.tscn" id="1_emnom"]
+[ext_resource type="PackedScene" uid="uid://c6wytccp6fsit" path="res://zones/deadly_zone.tscn" id="2_oceqk"]
 [ext_resource type="PackedScene" uid="uid://l1yqtqrqjmbh" path="res://player/player.tscn" id="2_pg50k"]
 
 [sub_resource type="Gradient" id="Gradient_pgsn6"]
 interpolation_mode = 2
-offsets = PackedFloat32Array(0, 0.188755, 0.550201, 0.955823)
-colors = PackedColorArray(1, 1, 1, 1, 0.657994, 0.657994, 0.657994, 1, 0.26555, 0.26555, 0.26555, 1, 0, 0, 0, 1)
+offsets = PackedFloat32Array(0, 0.00401606, 0.497992, 0.678715, 0.955823)
+colors = PackedColorArray(0.654232, 0.654232, 0.654232, 1, 0.657994, 0.657994, 0.657994, 1, 0.26555, 0.26555, 0.26555, 1, 0.115759, 0.115759, 0.115759, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_8u353"]
 gradient = SubResource("Gradient_pgsn6")
@@ -20,9 +20,11 @@ fill_to = Vector2(1, 0.5)
 [node name="Game" type="Node2D"]
 
 [node name="FriendlyZone" parent="." instance=ExtResource("1_emnom")]
-position = Vector2(344, -1)
+visible = false
+position = Vector2(0, 26)
 
 [node name="DeadlyZone" parent="." instance=ExtResource("2_oceqk")]
+position = Vector2(0, 22)
 
 [node name="Player" parent="." instance=ExtResource("2_pg50k")]
 position = Vector2(0, 35)

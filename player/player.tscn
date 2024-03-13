@@ -54,7 +54,6 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D"]
-light_mask = 2
 collision_layer = 2
 script = ExtResource("1_xhl2v")
 movement_speed = 45.0
