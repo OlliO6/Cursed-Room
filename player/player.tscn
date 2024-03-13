@@ -1,12 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://l1yqtqrqjmbh"]
+[gd_scene load_steps=8 format=3 uid="uid://l1yqtqrqjmbh"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_xhl2v"]
 [ext_resource type="Script" path="res://components/state_machine.gd" id="2_thslt"]
 [ext_resource type="Script" path="res://components/state.gd" id="3_hw1ms"]
 [ext_resource type="Script" path="res://player/weapon_holder.gd" id="4_wkoiu"]
 [ext_resource type="PackedScene" uid="uid://mxire01kjgcv" path="res://player/weapons/moon.tscn" id="5_hxix6"]
+[ext_resource type="Texture2D" uid="uid://crc2n1ym5udn0" path="res://player/player.png" id="6_6m5mg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tiiay"]
+radius = 4.0
 
 [node name="Player" type="CharacterBody2D"]
 collision_layer = 2
@@ -28,12 +30,18 @@ script = ExtResource("3_hw1ms")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_tiiay")
 
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -5)
+texture = ExtResource("6_6m5mg")
+
 [node name="StateLabel" type="Label" parent="."]
+offset_top = -1.0
 offset_right = 40.0
-offset_bottom = 23.0
+offset_bottom = 22.0
 
 [node name="WeaponHolder" type="Node2D" parent="." node_paths=PackedStringArray("_weapon")]
 script = ExtResource("4_wkoiu")
 _weapon = NodePath("Moon")
 
 [node name="Moon" parent="WeaponHolder" instance=ExtResource("5_hxix6")]
+visible = false
