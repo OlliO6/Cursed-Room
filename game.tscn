@@ -1,16 +1,28 @@
 [gd_scene load_steps=6 format=3 uid="uid://b4g4ti041upyd"]
 
-[ext_resource type="PackedScene" uid="uid://b60xn7n7ubk53" path="res://friendly_zone.tscn" id="1_emnom"]
+[ext_resource type="PackedScene" uid="uid://b60xn7n7ubk53" path="res://Zones/friendly_zone.tscn" id="1_emnom"]
+[ext_resource type="PackedScene" uid="uid://c6wytccp6fsit" path="res://Zones/deadly_zone.tscn" id="2_oceqk"]
 [ext_resource type="PackedScene" uid="uid://l1yqtqrqjmbh" path="res://player/player.tscn" id="2_pg50k"]
-[ext_resource type="Script" path="res://components/damage_receiver.gd" id="3_dfxkp"]
-[ext_resource type="Texture2D" uid="uid://dew8eid31v3cj" path="res://icon.svg" id="4_amf1v"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_f7es5"]
-size = Vector2(65, 65)
+[sub_resource type="Gradient" id="Gradient_pgsn6"]
+interpolation_mode = 2
+offsets = PackedFloat32Array(0, 0.188755, 0.550201, 0.955823)
+colors = PackedColorArray(1, 1, 1, 1, 0.657994, 0.657994, 0.657994, 1, 0.26555, 0.26555, 0.26555, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_8u353"]
+gradient = SubResource("Gradient_pgsn6")
+width = 80
+height = 80
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 0.5)
 
 [node name="Game" type="Node2D"]
 
 [node name="FriendlyZone" parent="." instance=ExtResource("1_emnom")]
+position = Vector2(344, -1)
+
+[node name="DeadlyZone" parent="." instance=ExtResource("2_oceqk")]
 
 [node name="Player" parent="." instance=ExtResource("2_pg50k")]
 position = Vector2(0, 35)
@@ -20,20 +32,6 @@ limit_bottom = 96
 position_smoothing_enabled = true
 editor_draw_limits = true
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-position = Vector2(67, -84)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(-22.5, 22.5)
-shape = SubResource("RectangleShape2D_f7es5")
-debug_color = Color(0.709804, 0.419608, 0.643137, 0.419608)
-
-[node name="DamageReceiver" type="Node" parent="CharacterBody2D"]
-script = ExtResource("3_dfxkp")
-
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
-position = Vector2(-21.5, 21.5)
-scale = Vector2(0.507813, 0.507813)
-texture = ExtResource("4_amf1v")
-
-[connection signal="took_damage" from="CharacterBody2D/DamageReceiver" to="CharacterBody2D" method="apply_scale" binds= [Vector2(0.8, 0.8)]]
+[node name="PointLight2D" type="PointLight2D" parent="Player"]
+position = Vector2(1, -8)
+texture = SubResource("GradientTexture2D_8u353")
