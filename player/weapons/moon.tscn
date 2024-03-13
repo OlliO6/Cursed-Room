@@ -228,7 +228,6 @@ active = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pivot/AttackArea"]
 position = Vector2(12.1341, 6.68173)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_tyops")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

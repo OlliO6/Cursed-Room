@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 InputManager="*res://singletons/input_manager.gd"
+MobileInterface="*res://singletons/mobile_inerface/mobile_interface.tscn"
 
 [display]
 
@@ -63,6 +64,11 @@ spezial={
 "events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":2,"position":Vector2(350, 17),"global_position":Vector2(354, 58),"factor":1.0,"button_index":2,"canceled":false,"pressed":true,"double_click":false,"script":null)
 ]
 }
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+pointing/emulate_mouse_from_touch=false
 
 [layer_names]
 

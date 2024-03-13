@@ -1,0 +1,60 @@
+[gd_scene load_steps=5 format=3 uid="uid://dh55y7ov1u54r"]
+
+[ext_resource type="Script" path="res://singletons/mobile_inerface/mobile_interface.gd" id="1_h35rd"]
+[ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="1_kiga8"]
+[ext_resource type="Texture2D" uid="uid://bkvmydfn5saxg" path="res://addons/virtual_joystick/textures/joystick_tip.png" id="3_tw62w"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1xigo"]
+radius = 63.19
+
+[node name="MobileInterface" type="CanvasLayer"]
+script = ExtResource("1_h35rd")
+
+[node name="Control" type="Control" parent="."]
+modulate = Color(1, 1, 1, 0.478431)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Virtual Joystick" parent="Control" instance=ExtResource("1_kiga8")]
+layout_mode = 1
+offset_left = 37.0
+offset_top = -56.0
+offset_right = 136.0
+offset_bottom = 22.0
+scale = Vector2(0.27, 0.27)
+deadzone_size = 5.0
+clampzone_size = 32.0
+action_left = "move_left"
+action_right = "move_right"
+action_up = "move_up"
+action_down = "move_down"
+
+[node name="Control" type="Control" parent="Control"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Control/Control"]
+position = Vector2(-17, -11)
+scale = Vector2(0.31, 0.31)
+texture_normal = ExtResource("3_tw62w")
+shape = SubResource("CircleShape2D_1xigo")
+action = "attack"
+
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="Control/Control"]
+position = Vector2(8, -48)
+scale = Vector2(0.225, 0.225)
+texture_normal = ExtResource("3_tw62w")
+shape = SubResource("CircleShape2D_1xigo")
+action = "spezial"
