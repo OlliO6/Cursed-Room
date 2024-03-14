@@ -25,5 +25,5 @@ layer_1/tile_data = PackedInt32Array(327674, 2, 2, 327675, 65538, 2, 327676, 655
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 color = Color(0.964706, 0.952941, 0.65098, 1)
-energy = 0.8
+energy = 0.6
 blend_mode = 1

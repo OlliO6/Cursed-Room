@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://l1yqtqrqjmbh"]
+[gd_scene load_steps=14 format=3 uid="uid://l1yqtqrqjmbh"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_xhl2v"]
 [ext_resource type="Script" path="res://components/state_machine.gd" id="2_thslt"]
@@ -7,7 +7,6 @@
 [ext_resource type="Script" path="res://player/weapon_holder.gd" id="4_wkoiu"]
 [ext_resource type="PackedScene" uid="uid://mxire01kjgcv" path="res://player/weapons/moon.tscn" id="5_hxix6"]
 [ext_resource type="Texture2D" uid="uid://crc2n1ym5udn0" path="res://player/player.png" id="6_6m5mg"]
-[ext_resource type="Texture2D" uid="uid://cbsh01gwdjmhr" path="res://player/aim.png" id="8_n5h8r"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tiiay"]
 radius = 4.0
@@ -84,11 +83,6 @@ script = ExtResource("4_wkoiu")
 _weapon = NodePath("Moon")
 
 [node name="Moon" parent="WeaponHolder" instance=ExtResource("5_hxix6")]
-
-[node name="Sprite2D" type="Sprite2D" parent="WeaponHolder"]
-modulate = Color(1, 1, 1, 0.2)
-position = Vector2(7, 0)
-texture = ExtResource("8_n5h8r")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -6)

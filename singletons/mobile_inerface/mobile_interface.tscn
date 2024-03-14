@@ -33,28 +33,54 @@ action_right = "move_right"
 action_up = "move_up"
 action_down = "move_down"
 
-[node name="Control" type="Control" parent="Control"]
+[node name="AttackStick" parent="Control" instance=ExtResource("1_kiga8")]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
-anchor_top = 1.0
 anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -40.0
-offset_top = -40.0
+offset_left = -47.0
+offset_top = -45.0
+offset_right = 52.0
+offset_bottom = 33.0
 grow_horizontal = 0
-grow_vertical = 0
+scale = Vector2(0.2, 0.2)
+deadzone_size = 20.0
+clampzone_size = 28.0
+use_input_actions = false
 
-[node name="TouchScreenButton" type="TouchScreenButton" parent="Control/Control"]
-position = Vector2(-17, -11)
-scale = Vector2(0.31, 0.31)
-texture_normal = ExtResource("3_tw62w")
-shape = SubResource("CircleShape2D_1xigo")
-action = "attack"
+[node name="Control" type="Control" parent="Control"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -20.0
+offset_bottom = 20.0
+grow_horizontal = 0
+grow_vertical = 2
 
 [node name="TouchScreenButton2" type="TouchScreenButton" parent="Control/Control"]
-position = Vector2(8, -48)
+position = Vector2(8, -13.5)
 scale = Vector2(0.225, 0.225)
 texture_normal = ExtResource("3_tw62w")
 shape = SubResource("CircleShape2D_1xigo")
 action = "spezial"
+
+[node name="Control2" type="Control" parent="Control"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_right = 40.0
+offset_bottom = 20.0
+grow_vertical = 2
+
+[node name="TouchScreenButton2" type="TouchScreenButton" parent="Control/Control2"]
+position = Vector2(15, -30.5)
+scale = Vector2(0.225, 0.225)
+texture_normal = ExtResource("3_tw62w")
+shape = SubResource("CircleShape2D_1xigo")
+action = "switch_zone"

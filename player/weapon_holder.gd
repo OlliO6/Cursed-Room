@@ -7,7 +7,13 @@ func _process(_delta: float) -> void:
 		rotate_weapon()
 
 func rotate_weapon() -> void:
-	var dir := (get_global_mouse_position() - global_position).normalized()
+	var dir: Vector2
+
+	if MobileInterface.is_mobile:
+		dir = MobileInterface.attack_dir.normalized()
+	else:
+		dir = (get_global_mouse_position() - global_position).normalized()
+
 	if dir != Vector2.ZERO:
 		global_transform.x = dir
 	
