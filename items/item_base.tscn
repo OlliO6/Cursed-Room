@@ -17,4 +17,5 @@ free_on_collect = true
 shape = SubResource("CircleShape2D_twtga")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -4)
 texture = ExtResource("2_0utyj")

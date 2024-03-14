@@ -21,12 +21,6 @@ fill_to = Vector2(1, 0.5)
 [node name="Game" type="Node2D"]
 script = ExtResource("1_soxd2")
 
-[node name="FriendlyZone" parent="." instance=ExtResource("2_2ar4w")]
-position = Vector2(0, 26)
-
-[node name="DeadlyZone" parent="." instance=ExtResource("3_a3fpl")]
-position = Vector2(0, 22)
-
 [node name="Player" parent="." instance=ExtResource("4_wbxod")]
 position = Vector2(0, 35)
 
@@ -38,6 +32,12 @@ editor_draw_limits = true
 [node name="PointLight2D" type="PointLight2D" parent="Player"]
 position = Vector2(1, -8)
 texture = SubResource("GradientTexture2D_8u353")
+
+[node name="FriendlyZone" parent="." instance=ExtResource("2_2ar4w")]
+position = Vector2(0, 26)
+
+[node name="DeadlyZone" parent="." instance=ExtResource("3_a3fpl")]
+position = Vector2(0, 22)
 
 [connection signal="deadly_zone_entered" from="." to="Player/PointLight2D" method="show"]
 [connection signal="friendly_zone_entered" from="." to="Player/PointLight2D" method="hide"]

@@ -32,6 +32,9 @@ func enter_zone(zone: Zone) -> void:
 	if !to_add.is_inside_tree():
 		add_child(to_add)
 	
+	player.get_parent().remove_child(player)
+	to_add.add_child(player)
+	
 	(friendly_zone_entered if in_friendly_zone() else deadly_zone_entered).emit()
 
 enum Zone {Friendly, Deadly}
