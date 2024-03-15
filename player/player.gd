@@ -5,7 +5,8 @@ extends CharacterBody2D
 @export_range(0, 1) var acceleration: float
 @export_range(0, 1) var deceleration: float
 
-@onready var sprite = get_node("AnimatedSprite2D") as AnimatedSprite2D
+@onready var weapon_holder := get_node("WeaponHolder") as Node2D
+@onready var sprite := get_node("AnimatedSprite2D") as AnimatedSprite2D
 @onready var state_machine := $StateMachine as StateMachine
 @onready var idle_state := $StateMachine/Idle as State
 @onready var run_state := $StateMachine/Run as State
@@ -13,6 +14,7 @@ extends CharacterBody2D
 func _ready() -> void:
 	idle_state.state_entered.connect(sprite.play.bind("idle"))
 	run_state.state_entered.connect(sprite.play.bind("run"))
+	EventBus.attacked.connect(_on_attacked)
 
 func _physics_process(_delta) -> void:
 	$StateLabel.text = state_machine.state.name
@@ -35,3 +37,6 @@ func _physics_process(_delta) -> void:
 
 func _move(dir: Vector2, speed: float, accel: float) -> void:
 	velocity = lerp(velocity, dir * speed, accel)
+
+func _on_attacked(_weapon: Weapon) -> void:
+	sprite.flip_h = abs(weapon_holder.rotation_degrees) > 90

@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 
 InputManager="*res://singletons/input_manager.gd"
 MobileInterface="*res://singletons/mobile_inerface/mobile_interface.tscn"
+EventBus="*res://singletons/event_bus.gd"
 
 [display]
 

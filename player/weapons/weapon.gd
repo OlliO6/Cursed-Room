@@ -18,6 +18,7 @@ func attack() -> void:
 	is_attacking = true
 	can_attack_again = false
 	attacked.emit()
+	EventBus.emit_attacked(self)
 
 func end_attack() -> void:
 	is_attacking = false

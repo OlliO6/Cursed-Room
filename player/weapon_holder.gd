@@ -1,9 +1,9 @@
 extends Node2D
 
-@export var _weapon: Weapon
+@export var weapon: Weapon
 
 func _process(_delta: float) -> void:
-	if is_instance_valid(_weapon)&&_weapon.do_rotate():
+	if is_instance_valid(weapon) and weapon.do_rotate():
 		rotate_weapon()
 
 func rotate_weapon() -> void:
@@ -22,6 +22,6 @@ func rotate_weapon() -> void:
 	scale = Vector2.ONE
 	
 	if abs(rotation_degrees) > 90:
-		_weapon.transform = Transform2D.FLIP_Y
+		weapon.transform = Transform2D.FLIP_Y
 	else:
-		_weapon.transform = Transform2D.IDENTITY
+		weapon.transform = Transform2D.IDENTITY

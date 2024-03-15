@@ -77,10 +77,10 @@ modulate = Color(1, 1, 1, 0.5)
 position = Vector2(0, -3)
 texture = ExtResource("4_8ivth")
 
-[node name="WeaponHolder" type="Node2D" parent="." node_paths=PackedStringArray("_weapon")]
+[node name="WeaponHolder" type="Node2D" parent="." node_paths=PackedStringArray("weapon")]
 position = Vector2(0, -3)
 script = ExtResource("4_wkoiu")
-_weapon = NodePath("Moon")
+weapon = NodePath("Moon")
 
 [node name="Moon" parent="WeaponHolder" instance=ExtResource("5_hxix6")]
 
